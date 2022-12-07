@@ -3,5 +3,5 @@ with import <nixpkgs> {
 };
 
 mkShell {
-  nativeBuildInputs = [ flatbuffers xplorer-flatbuffers spdlog googlebenchz oorb ];
+  nativeBuildInputs = [ flatbuffers xplorer-flatbuffers spdlog googlebench oorb ];
 }

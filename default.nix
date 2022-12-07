@@ -1,6 +1,6 @@
 self: super:
 {
-  googlebenchz = super.callPackage ./pkgs/googlebench { };
+  googlebench = super.callPackage ./pkgs/googlebench { };
   flatbuffers = super.callPackage ./pkgs/flatbuffers { };
   spdlog = super.callPackage ./pkgs/spdlog { };
   xplorer-flatbuffers = super.callPackage ./pkgs/xplorer-flatbuffers { };
