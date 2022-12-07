@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/liboorb-common-utils.git";
     ref = "fix_nlohmann";   
-    rev = "8e528cb7b5a309257dbba1a2429c8ad1711a8c80";
+    rev = "a907a0358423de54ad0095f5200648a1ca3505d3";
   };
 
   nativeBuildInputs = [ cmake spdlog flatbuffers pkg-config xplorer-flatbuffers nlohmann_json ];

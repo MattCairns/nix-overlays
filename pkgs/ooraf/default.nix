@@ -5,7 +5,7 @@ with import <nixpkgs> {
 { stdenv, cmake, flatbuffers, spdlog, pkg-config, xplorer-flatbuffers, argparse, libyamlcpp }:
 
 stdenv.mkDerivation rec {
-  name = "liboorb";
+  name = "ooraf";
 
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/ooraf.git";

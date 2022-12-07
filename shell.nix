@@ -3,5 +3,13 @@ with import <nixpkgs> {
 };
 
 mkShell {
-  nativeBuildInputs = [ flatbuffers xplorer-flatbuffers spdlog googlebench oorb libzmq3-dev ipc ];
+  nativeBuildInputs = [ 
+    /* flatbuffers  */
+    /* xplorer-flatbuffers  */
+    /* spdlog  */
+    /* googlebench  */
+    liboorb 
+    /* libzmq3-dev  */
+    /* ipc  */
+  ];
 }

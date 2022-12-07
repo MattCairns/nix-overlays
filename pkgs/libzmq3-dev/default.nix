@@ -2,7 +2,7 @@ with import <nixpkgs> {
   overlays = [ (import ../../default.nix) ]; 
 };
 
-{ stdenv, fetchurl, cmake, pkg-config }:
+{ stdenv, fetchurl, cmake, pkg-config, libsodium }:
 
 stdenv.mkDerivation rec {
   name = "libzmq3-dev";
@@ -12,11 +12,14 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-xZMAGon1qF3S3fVkgF3rhg4CRxFxs/IElEhXM2KVw+U=";
   };
 
-  nativeBuildInputs = [ cmake pkg-config ];
+  nativeBuildInputs = [ cmake pkg-config libsodium ];
 
   doCheck = true;
 
-  /* cmakeFlags = [
+  cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
-  ]; */
+    "-DWITH_PERF_TOOL=OFF" 
+    "-DZMQ_BUILD_TESTS=OFF"
+    "-DENABLE_CPACK=OFF" 
+  ];
 }
