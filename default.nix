@@ -8,7 +8,7 @@ self: super:
   spdlog = super.callPackage ./pkgs/spdlog { };
 
   xplorer-flatbuffers = super.callPackage ./pkgs/xplorer-flatbuffers { };
-  liboorb = super.callPackage ./pkgs/oorb { };
-  /* ooraf = super.callPackage ./pkgs/ooraf { }; */
-  ipc = super.callPackage ./pkgs/ipc { };
+  liboorb = super.callPackage ./pkgs/liboorb { };
+  libooraf = super.callPackage ./pkgs/libooraf { };
+  libipc = super.callPackage ./pkgs/libipc { };
 }

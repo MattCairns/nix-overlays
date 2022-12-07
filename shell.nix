@@ -13,6 +13,7 @@ mkShell {
 
     xplorer-flatbuffers 
     liboorb 
-    ipc 
+    libooraf
+    libipc 
   ];
 }

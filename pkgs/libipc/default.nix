@@ -17,12 +17,12 @@ with import <nixpkgs> {
 }:
 
 stdenv.mkDerivation rec {
-  name = "ipc";
+  name = "libipc";
 
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/core/ipc.git";
     ref = "path_fixes";   
-    rev = "ca2dc46fe7fab0aa7c36da39f01c88d0acd9341a";
+    rev = "f2b62596757d8c6f99633086316d320bf544b968";
   };
 
   nativeBuildInputs = [ 
