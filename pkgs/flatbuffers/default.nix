@@ -1,4 +1,4 @@
-{ stdenv, cmake }:
+{ stdenv, cmake, git }:
 
 stdenv.mkDerivation rec {
   name = "flatbuffers";
@@ -8,12 +8,13 @@ stdenv.mkDerivation rec {
     ref = "refs/tags/v2.0.0";   
   };
 
-  buildInputs = [ cmake ];
+  buildInputs = [ cmake git ];
 
   doCheck = true;
 
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
+
   ];
 
   nativeBuildInputs = [ cmake ];

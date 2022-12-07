@@ -4,8 +4,9 @@ stdenv.mkDerivation rec {
   name = "spdlog";
 
   src = builtins.fetchGit {
-    url = "https://github.com/gabime/spdlog.git";
-    ref = "master";   
+    url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/oor-spdlog.git";
+    ref = "master-oor";   
+    rev = "e96105e99f570b2fd30fdc185c5b0efeb243c86f";
   };
 
   buildInputs = [
@@ -16,10 +17,6 @@ stdenv.mkDerivation rec {
 
   cmakeFlags = [
     "-DSPDLOG_BUILD_SHARED=ON"
-    "-DSPDLOG_BUILD_STATIC=OFF"
-    "-DSPDLOG_BUILD_EXAMPLE=OFF"
-    "-DSPDLOG_BUILD_BENCH=OFF"
-    "-DSPDLOG_BUILD_TESTS=OFF"
   ];
 
   nativeBuildInputs = [ cmake gcc12 ];
