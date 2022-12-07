@@ -5,8 +5,8 @@ self: super:
   spdlog = super.callPackage ./pkgs/spdlog { };
   xplorer-flatbuffers = super.callPackage ./pkgs/xplorer-flatbuffers { };
   oorb = super.callPackage ./pkgs/oorb { };
-  /* pantable = super.callPackage ./pkgs/pantable { };
-  cxxopts = super.callPackage ./pkgs/cxxopts { };
-  pegtl = super.callPackage ./pkgs/pegtl { };
-  netron = super.callPackage ./pkgs/netron { }; */
+  ooraf = super.callPackage ./pkgs/ooraf { };
+  ipc = super.callPackage ./pkgs/ipc { };
+  libzmq3-dev = super.callPackage ./pkgs/libzmq3-dev { };
+  /* argparse = super.callPackage ./pkgs/argparse { }; */
 }
