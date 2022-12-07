@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/xplorer-flatbuffers.git";
     ref = "add_pkgconfig";   
-    rev = "7cf716ddc10c813c1b4c3cd0a4f20e4346819e93";
+    rev = "dc02e0e85c1a36187b3316d320b661d5e0634524";
   };
 
   nativeBuildInputs = [ cmake flatbuffers pkg-config ];

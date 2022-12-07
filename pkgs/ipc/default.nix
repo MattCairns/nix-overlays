@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/core/ipc.git";
     ref = "path_fixes";   
-    rev = "fee9a26971ac452fbe723dc47a727583aed875cb";
+    rev = "ca2dc46fe7fab0aa7c36da39f01c88d0acd9341a";
   };
 
   nativeBuildInputs = [ 

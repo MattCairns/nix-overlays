@@ -5,7 +5,7 @@ with import <nixpkgs> {
 mkShell {
   nativeBuildInputs = [ 
     libzmq3-dev 
-    /* argparse */
+    argparse
     yaml-cpp
     googlebench 
     flatbuffers 

@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/liboorb-common-utils.git";
     ref = "fix_nlohmann";   
-    rev = "5e7f0deee9e83293c0254c14cb77c710687f32e7";
+    rev = "2cdb6917ef5a573cf64022cc6c70f12ed9f5a1d2";
   };
 
   nativeBuildInputs = [ 

@@ -12,6 +12,13 @@ stdenv.mkDerivation rec {
     ref = "master-oor";   
   };
 
+  postPatch = ''
+    substituteInPlace CMakeLists.txt \
+      --replace '$'{CMAKE_INSTALL_LIBDIR_ARCHIND} '$'{CMAKE_INSTALL_LIBDIR}
+    substituteInPlace packaging/pkgconfig.pc.in \
+      --replace '$'{prefix}/@CMAKE_INSTALL_INCLUDEDIR@ @CMAKE_INSTALL_FULL_INCLUDEDIR@
+  '';
+
   nativeBuildInputs = [ cmake pkg-config ];
 
   doCheck = true;
