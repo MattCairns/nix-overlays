@@ -22,8 +22,7 @@ stdenv.mkDerivation rec {
 
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/ooraf.git";
-    ref = "OOR-2735-resolve-pkgconfig-and-file-include-pathing-issues";   
-    rev = "e29080278bbe967360a725541e1393f48d8a57fa";
+    ref = "develop";   
   };
 
   nativeBuildInputs = [ 

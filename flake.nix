@@ -1,3 +1,21 @@
+/* {
+  description = "Your new nix config";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+  outputs = { self, nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem
+      (system:
+        let lib = nixpkgs.lib;
+            pkgs = nixpkgs.legacyPackages.${system};
+            packages = (import ./default.nix { inherit pkgs lib; });
+        in {
+          overlay = self: super: packages;
+          inherit packages;
+        });
+} */
 {
   description = "Your new nix config";
 
@@ -17,9 +35,21 @@
       ];
     in
     rec {
-      # Your custom packages
+      /* # Your custom packages
       # Acessible through 'nix build', 'nix shell', etc
-      packages = forAllSystems (system:
+      libzmq3-dev = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/libzmq3-dev { };
+      argparse = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/argparse { };
+      yaml-cpp = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/yaml-cpp { };
+      googlebench = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/googlebench { };
+      flatbuffers = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/flatbuffers { };
+      spdlog = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/spdlog { };
+
+      xplorer-flatbuffers = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/xplorer-flatbuffers { };
+      liboorb = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/liboorb { };
+      libooraf = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/libooraf { };
+      libipc = nixpkgs.legacyPackages.${system}.callPackage ./pkgs/libipc { };
+ */
+      legacyPackages = forAllSystems (system:
         let
           pkgs = import nixpkgs {
             inherit system;
