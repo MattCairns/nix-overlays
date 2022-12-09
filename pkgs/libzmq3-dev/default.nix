@@ -1,7 +1,3 @@
-with import <nixpkgs> {
-  overlays = [ (import ../../default.nix) ]; 
-};
-
 { stdenv, fetchurl, cmake, pkg-config, libsodium }:
 
 stdenv.mkDerivation rec {

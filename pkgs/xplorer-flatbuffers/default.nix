@@ -1,12 +1,14 @@
-{ stdenv, cmake, pkg-config, flatbuffers }:
+/* with import <nixpkgs> {
+  overlays = [ (import ../default.nix) ]; 
+}; */
+{ stdenv, cmake, pkg-config, flatbuffers, system}:
 
 stdenv.mkDerivation rec {
   name = "xplorer-flatbuffers";
 
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/libs/xplorer-flatbuffers.git";
-    ref = "OOR-2735-resolve-pkgconfig-and-file-include-pathing-issues";   
-    rev = "6938a775a5b6ede62dd9f84831d44976b65daa02";
+    ref = "develop";   
   };
 
   nativeBuildInputs = [ cmake flatbuffers pkg-config ];

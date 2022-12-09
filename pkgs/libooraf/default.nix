@@ -1,5 +1,5 @@
 with import <nixpkgs> {
-  overlays = [ (import ../../default.nix) ]; 
+  overlays = [ (import ../default.nix) ]; 
 };
 
 { 
