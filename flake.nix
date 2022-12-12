@@ -21,9 +21,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    xfbsPkg.url = "git+ssh://gitlab.com/open-ocean-robotics/xplorer-vessel/libs/xplorer-flatbuffers.git?ref=flake_update";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, xfbsPkg, ... }@inputs:
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -37,6 +38,7 @@
     rec {
       legacyPackages = forAllSystems (system:
         let
+          xfbs = xfbsPkg.defaultPackage.${system};
           pkgs = import nixpkgs {
             inherit system;
             overlays = [
@@ -51,11 +53,12 @@
           googlebench = pkgs.googlebench;
           flatbuffers = pkgs.flatbuffers;
           spdlog = pkgs.spdlog;
+          xplorer-flatbuffers = xfbs;
 
-          xplorer-flatbuffers = pkgs.xplorer-flatbuffers;
           liboorb = pkgs.liboorb;
           libooraf = pkgs.libooraf;
           libipc = pkgs.libipc;
+          libsatcomms = pkgs.libsatcomms;
         }
       );
       overlays.default = final: prev: {
@@ -67,10 +70,11 @@
         flatbuffers = prev.callPackage ./pkgs/flatbuffers { };
         spdlog = prev.callPackage ./pkgs/spdlog { };
 
-        xplorer-flatbuffers = prev.callPackage ./pkgs/xplorer-flatbuffers { };
+        /* xplorer-flatbuffers = prev.callPackage ./pkgs/xplorer-flatbuffers { }; */
         liboorb = prev.callPackage ./pkgs/liboorb { };
         libooraf = prev.callPackage ./pkgs/libooraf { };
         libipc = prev.callPackage ./pkgs/libipc { };
+        libsatcomms = prev.callPackage ./pkgs/libsatcomms { };
       };
       # Devshell for bootstrapping
       # Acessible through 'nix develop' or 'nix-shell' (legacy)
