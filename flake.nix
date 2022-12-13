@@ -32,7 +32,7 @@
           yaml-cpp = pkgs.yaml-cpp;
           libamqp-cpp = pkgs.libamqp-cpp;
           googlebench = pkgs.googlebench;
-          /* flatbuffers = pkgs.flatbuffers; */
+          flatbuffers = pkgs.flatbuffers;
           spdlog = pkgs.spdlog;
         }
       );
@@ -42,7 +42,7 @@
         yaml-cpp = prev.callPackage ./pkgs/yaml-cpp { };
         libamqp-cpp = prev.callPackage ./pkgs/amqp-cpp { };
         googlebench = prev.callPackage ./pkgs/googlebench { };
-        /* flatbuffers = prev.callPackage ./pkgs/flatbuffers { }; */
+        flatbuffers = prev.callPackage ./pkgs/flatbuffers { };
         spdlog = prev.callPackage ./pkgs/spdlog { };
       };
       # Devshell for bootstrapping

@@ -6,6 +6,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "https://github.com/google/flatbuffers.git";
     ref = "refs/tags/v2.0.0";   
+    rev = "a9a295fecf3fbd5a4f571f53b01f63202a3e2113";
   };
 
   buildInputs = [ cmake git ];
@@ -18,12 +19,4 @@ stdenv.mkDerivation rec {
   ];
 
   nativeBuildInputs = [ cmake ];
-
-  /* buildPhase = "cmake . && make -j"; */
-
-  /* postInstall = ''
-    mkdir -p $out/share/doc/spdlog
-    cp -rv ../example $out/share/doc/spdlog
-  ''; */
-
 }
