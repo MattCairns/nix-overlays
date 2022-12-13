@@ -1,8 +1,4 @@
-with import <nixpkgs> {
-  overlays = [ (import ../default.nix) ]; 
-};
-
-{ stdenv, cmake, pkg-config }:
+{ stdenv, gcc12, cmake, pkg-config }:
 
 stdenv.mkDerivation rec {
   name = "argparse";
@@ -10,6 +6,7 @@ stdenv.mkDerivation rec {
   src = builtins.fetchGit {
     url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/oor-argparse.git";
     ref = "master-oor";   
+    rev = "0cebe889fa18fbd7ec366289063ee94f6bd8e0e8";
   };
 
   postPatch = ''
@@ -19,7 +16,7 @@ stdenv.mkDerivation rec {
       --replace '$'{prefix}/@CMAKE_INSTALL_INCLUDEDIR@ @CMAKE_INSTALL_FULL_INCLUDEDIR@
   '';
 
-  nativeBuildInputs = [ cmake pkg-config ];
+  nativeBuildInputs = [ gcc12 cmake pkg-config ];
 
   doCheck = true;
 
