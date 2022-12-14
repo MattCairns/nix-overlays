@@ -1,12 +1,11 @@
-{ stdenv, gcc12, cmake, pkg-config }:
+{ stdenv, fetchurl, gcc12, cmake, pkg-config }:
 
 stdenv.mkDerivation rec {
   name = "argparse";
 
-  src = builtins.fetchGit {
-    url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/oor-argparse.git";
-    ref = "master-oor";   
-    rev = "0cebe889fa18fbd7ec366289063ee94f6bd8e0e8";
+  src = fetchurl {
+    url = "https://github.com/p-ranav/argparse/archive/refs/tags/v2.9.tar.gz";
+    sha256 = "sha256-zVYyk1gLncWSJU3zW0nPihm0hw/19hHHWEz5Z9nmAx4=";
   };
 
   postPatch = ''
