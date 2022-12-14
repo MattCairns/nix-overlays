@@ -1,13 +1,21 @@
-{ stdenv, cmake, pkg-config, gcc12 }:
+{ stdenv, cmake, fetchurl, fetchpatch, pkg-config, gcc12 }:
 
 stdenv.mkDerivation rec {
   name = "spdlog";
 
-  src = builtins.fetchGit {
-    url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/oor-spdlog.git";
-    ref = "master-oor";   
-    rev = "e96105e99f570b2fd30fdc185c5b0efeb243c86f";
+  src = fetchurl {
+    url = "https://github.com/gabime/spdlog/archive/refs/tags/v1.9.2.tar.gz";
+    sha256 = "sha256-b/+SFfXLgXYL5MwW0DNSbRCAQn0jbobXC7AplPhePTg=";
   };
+
+  patches = [
+    (fetchpatch {
+      name = "Allow absolute CMAKE_INSTALL_LIBDIR";
+      url = "https://github.com/gabime/spdlog/commit/afb69071d5346b84e38fbcb0c8c32eddfef02a55.patch";
+      sha256 = "sha256-2MwNpXEo8GJvVaoKDQumrTlxi+POs+1ghs5/tNcSSzE=";
+    })
+  ];
+   
 
   buildInputs = [
     pkg-config cmake gcc12 
@@ -21,11 +29,9 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ cmake gcc12 ];
 
-
   postInstall = ''
     mkdir -p $out/share/doc/spdlog
     cp -rv ../example $out/share/doc/spdlog
   '';
-
 }
 
