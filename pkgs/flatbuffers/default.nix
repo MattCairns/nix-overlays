@@ -1,12 +1,11 @@
-{ stdenv, cmake, git }:
+{ stdenv, fetchurl, cmake, git }:
 
 stdenv.mkDerivation rec {
   name = "flatbuffers";
 
-  src = builtins.fetchGit {
-    url = "https://github.com/google/flatbuffers.git";
-    ref = "refs/tags/v2.0.0";   
-    rev = "a9a295fecf3fbd5a4f571f53b01f63202a3e2113";
+  src = fetchurl {
+    url = "https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz";
+    sha256 = "sha256-nduQMXmPT4dU0A/KLxpo7PnQ+D36xyOa8TEeT9mlZcQ=";
   };
 
   buildInputs = [ cmake git ];

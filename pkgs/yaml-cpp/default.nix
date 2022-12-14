@@ -1,12 +1,11 @@
-{ stdenv, gcc12, cmake, pkg-config }:
+{ stdenv, fetchurl, gcc12, cmake, pkg-config }:
 
 stdenv.mkDerivation rec {
   name = "argparse";
 
-  src = builtins.fetchGit {
-    url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/oor-yaml-cpp.git";
-    ref = "master-oor";   
-    rev = "744970e25f359e02be70e402069f6f7c177a58de";
+  src = fetchurl {
+    url = "https://github.com/jbeder/yaml-cpp/archive/refs/heads/master.tar.gz";
+    sha256 = "sha256-lDWDPZyfKdztVpNviGLN7iyVW15PaL1pNTAuu0u3ZVs=";
   };
 
   nativeBuildInputs = [ gcc12 cmake pkg-config ];

@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "Custom Nix Overlays for fun stuff";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
@@ -45,11 +45,5 @@
         flatbuffers = prev.callPackage ./pkgs/flatbuffers { };
         spdlog = prev.callPackage ./pkgs/spdlog { };
       };
-      # Devshell for bootstrapping
-      # Acessible through 'nix develop' or 'nix-shell' (legacy)
-      devShells = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./shell.nix { inherit pkgs; }
-      );
     };
 }

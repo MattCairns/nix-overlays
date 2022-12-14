@@ -1,12 +1,11 @@
-{ stdenv, cmake, libssh, openssl, pkg-config }:
+{ stdenv, fetchurl, cmake, libssh, openssl, pkg-config }:
 
 stdenv.mkDerivation rec {
   name = "amqp-cpp";
 
-  src = builtins.fetchGit {
-    url = "git@gitlab.com:open-ocean-robotics/xplorer-vessel/3rd-party/amqp-cpp.git";
-    ref = "OOR-master";   
-    rev = "3ea3af992c6c55bac25056871b8d87c67a6f8a09";
+  src = fetchurl {
+    url = "https://github.com/CopernicaMarketingSoftware/AMQP-CPP/archive/refs/tags/v4.3.18.tar.gz";
+    sha256 = "sha256-zCwfxdoAoXeMKAQwbga97ceCpfdHYrnZtELTpJjdDE8=";
   };
 
   nativeBuildInputs = [ cmake libssh openssl pkg-config ];
