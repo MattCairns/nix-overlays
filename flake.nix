@@ -34,6 +34,7 @@
           googlebench = pkgs.googlebench;
           flatbuffers = pkgs.flatbuffers;
           spdlog = pkgs.spdlog;
+          adi1090x-plymouth = pkgs.adi1090x-plymouth;
         }
       );
       overlays.default = final: prev: {
@@ -44,6 +45,7 @@
         googlebench = prev.callPackage ./pkgs/googlebench { };
         flatbuffers = prev.callPackage ./pkgs/flatbuffers { };
         spdlog = prev.callPackage ./pkgs/spdlog { };
+        adi1090x-plymouth = prev.callPackage ./pkgs/plymouth-themes { };
       };
     };
 }
