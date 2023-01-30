@@ -35,6 +35,7 @@
           flatbuffers = pkgs.flatbuffers;
           spdlog = pkgs.spdlog;
           adi1090x-plymouth = pkgs.adi1090x-plymouth;
+          tailscale = pkgs.tailscale;
         }
       );
       overlays.default = final: prev: {
