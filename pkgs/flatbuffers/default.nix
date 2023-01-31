@@ -1,11 +1,14 @@
-{ stdenv, fetchurl, cmake, git }:
+{ stdenv, fetchFromGitHub, cmake, git }:
 
 stdenv.mkDerivation rec {
   name = "flatbuffers";
+  version = "23.1.21";
 
-  src = fetchurl {
-    url = "https://github.com/google/flatbuffers/archive/refs/tags/v2.0.0.tar.gz";
-    sha256 = "sha256-nduQMXmPT4dU0A/KLxpo7PnQ+D36xyOa8TEeT9mlZcQ=";
+  src = fetchFromGitHub {
+    owner = "google";
+    repo = "flatbuffers";
+    rev = "v${version}";
+    sha256 = "sha256-/46Yo186PjewYN+e/UWZc0QQhXZcq/x7iaN48RA1avw=";
   };
 
   buildInputs = [ cmake git ];
