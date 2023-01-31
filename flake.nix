@@ -47,6 +47,7 @@
         flatbuffers = prev.callPackage ./pkgs/flatbuffers { };
         spdlog = prev.callPackage ./pkgs/spdlog { };
         adi1090x-plymouth = prev.callPackage ./pkgs/plymouth-themes { };
+        tailscale = prev.callPackage ./pkgs/tailscale { };
       };
     };
 }
