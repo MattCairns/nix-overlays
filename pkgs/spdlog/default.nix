@@ -1,11 +1,14 @@
-{ stdenv, cmake, fetchurl, fetchpatch, pkg-config, gcc12 }:
+{ stdenv, cmake, fetchFromGitHub, fetchpatch, pkg-config, gcc12 }:
 
 stdenv.mkDerivation rec {
   name = "spdlog";
+  version = "1.9.2";
 
-  src = fetchurl {
-    url = "https://github.com/gabime/spdlog/archive/refs/tags/v1.9.2.tar.gz";
-    sha256 = "sha256-b/+SFfXLgXYL5MwW0DNSbRCAQn0jbobXC7AplPhePTg=";
+  src = fetchFromGitHub {
+    owner = "gabime";
+    repo = "spdlog";
+    rev = "v${version}";
+    sha256 = "sha256-GSUdHtvV/97RyDKy8i+ticnSlQCubGGWHg4Oo+YAr8Y=";
   };
 
   patches = [
