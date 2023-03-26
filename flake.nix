@@ -36,6 +36,7 @@
           spdlog = pkgs.spdlog;
           adi1090x-plymouth = pkgs.adi1090x-plymouth;
           tailscale = pkgs.tailscale;
+          aichat = pkgs.aichat;
         }
       );
       overlays.default = final: prev: {
@@ -48,6 +49,7 @@
         spdlog = prev.callPackage ./pkgs/spdlog { };
         adi1090x-plymouth = prev.callPackage ./pkgs/plymouth-themes { };
         tailscale = prev.callPackage ./pkgs/tailscale { };
+        aichat = prev.callPackage ./pkgs/aichat { };
       };
     };
 }
