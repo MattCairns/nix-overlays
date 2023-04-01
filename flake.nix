@@ -50,6 +50,7 @@
         spdlog = prev.callPackage ./pkgs/spdlog { };
         adi1090x-plymouth = prev.callPackage ./pkgs/plymouth-themes { };
         tailscale = prev.callPackage ./pkgs/tailscale { };
+        aichat = prev.callPackage ./pkgs/aichat { };
         gptcommit = prev.callPackage ./pkgs/gptcommit { };
       };
     };
