@@ -2,7 +2,7 @@
   description = "Custom Nix Overlays for fun stuff";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -37,6 +37,7 @@
           adi1090x-plymouth = pkgs.adi1090x-plymouth;
           tailscale = pkgs.tailscale;
           aichat = pkgs.aichat;
+          gptcommit = pkgs.gptcommit;
         }
       );
       overlays.default = final: prev: {
@@ -49,7 +50,7 @@
         spdlog = prev.callPackage ./pkgs/spdlog { };
         adi1090x-plymouth = prev.callPackage ./pkgs/plymouth-themes { };
         tailscale = prev.callPackage ./pkgs/tailscale { };
-        aichat = prev.callPackage ./pkgs/aichat { };
+        gptcommit = prev.callPackage ./pkgs/gptcommit { };
       };
     };
 }
