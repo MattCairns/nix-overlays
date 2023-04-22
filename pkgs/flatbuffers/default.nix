@@ -1,12 +1,12 @@
 { stdenv, fetchFromGitHub, cmake, git }:
 
 stdenv.mkDerivation rec {
-  name = "flatbuffers";
+  pname = "flatbuffers";
   version = "23.1.21";
 
   src = fetchFromGitHub {
     owner = "google";
-    repo = "flatbuffers";
+    repo = "${pname}";
     rev = "v${version}";
     sha256 = "sha256-/46Yo186PjewYN+e/UWZc0QQhXZcq/x7iaN48RA1avw=";
   };
