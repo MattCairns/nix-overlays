@@ -1,13 +1,13 @@
 { lib, pkgs, fetchFromGitHub, rustPlatform }:
 rustPlatform.buildRustPackage rec {
   pname = "ktra";
-  version = "0.7.0";
+  version = "0.5.1";
 
   src = fetchFromGitHub {
-    owner = "moriturus";
+    owner = "jean-airoldie";
     repo = pname;
     rev = version;
-    hash = "sha256-mrPR9BJMdG22z56QgGB9imZIel5E21AggqmHXWQ7YVQ=";
+    hash = "sha256-IivR7KP2nULH/ucM5nSk9/AsQCJTu1+j+JjDfV36xUo=";
   };
 
   cargoLock = {
