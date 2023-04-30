@@ -37,6 +37,8 @@
           aichat = pkgs.aichat;
           gptcommit = pkgs.gptcommit;
           hide-my-mess-rs = pkgs.hide-my-mess-rs;
+          molecule = pkgs.molecule;
+          molecule-plugins = pkgs.molecule-plugins;
         }
       );
       overlays.default = final: prev: {
@@ -52,6 +54,8 @@
         aichat = prev.callPackage ./pkgs/aichat { };
         gptcommit = prev.callPackage ./pkgs/gptcommit { };
         hide-my-mess-rs = prev.callPackage ./pkgs/hide-my-mess-rs { };
+        molecule = prev.callPackage ./pkgs/molecule { };
+        molecule-plugins = prev.callPackage ./pkgs/molecule-plugins { };
       };
     };
 }
