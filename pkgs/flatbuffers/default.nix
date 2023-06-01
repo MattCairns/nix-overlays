@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "google";
     repo = "${pname}";
     rev = "v${version}";
-    sha256 = "sha256-/46Yo186PjewYN+e/UWZc0QQhXZcq/x7iaN48RA1avw=";
+    sha256 = "/46Yo186PjewYN+e/UWZc0QQhXZcq/x7iaN48RA1avw=";
   };
 
   buildInputs = [ cmake git ];
