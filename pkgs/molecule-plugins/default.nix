@@ -1,13 +1,13 @@
-{ python310
-, python310Packages
-, molecule
-, selinux-python
+{
+  python310,
+  python310Packages,
+  molecule,
+  selinux-python,
 }:
-
 python310.pkgs.buildPythonPackage rec {
- pname = "molecule-plugins";
+  pname = "molecule-plugins";
   version = "23.4.1";
-  format = "pyproject";  
+  format = "pyproject";
 
   src = python310.pkgs.fetchPypi {
     inherit pname version;
@@ -27,5 +27,5 @@ python310.pkgs.buildPythonPackage rec {
     python310Packages.setuptools-scm-git-archive
     python310Packages.wheel
     molecule
-  ];}
-
+  ];
+}
