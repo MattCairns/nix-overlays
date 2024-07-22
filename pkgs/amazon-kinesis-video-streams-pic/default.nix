@@ -3,12 +3,12 @@
   fetchFromGitHub,
   cmake,
   pkg-config,
-  sd
+  sd,
 }:
 stdenv.mkDerivation {
   name = "amazon-kinesis-video-streams-pic";
 
-   src = fetchFromGitHub {
+  src = fetchFromGitHub {
     owner = "awslabs";
     repo = "amazon-kinesis-video-streams-pic";
     rev = "v1.1.0";
