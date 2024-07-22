@@ -40,6 +40,7 @@
         hide-my-mess-rs = pkgs.hide-my-mess-rs;
         molecule = pkgs.molecule;
         molecule-plugins = pkgs.molecule-plugins;
+        amazon-kinesis-video-streams-pic = pkgs.amazon-kinesis-video-streams-pic;
       }
     );
     overlays.default = final: prev: {
@@ -57,6 +58,7 @@
       hide-my-mess-rs = prev.callPackage ./pkgs/hide-my-mess-rs {};
       molecule = prev.callPackage ./pkgs/molecule {};
       molecule-plugins = prev.callPackage ./pkgs/molecule-plugins {};
+      amazon-kinesis-video-streams-pic = prev.callPackage ./pkgs/amazon-kinesis-video-streams-pic {};
     };
   };
 }
