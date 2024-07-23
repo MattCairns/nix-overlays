@@ -1,5 +1,11 @@
-{ stdenv, fetchurl, cmake, libssh, openssl, pkg-config }:
-
+{
+  stdenv,
+  fetchurl,
+  cmake,
+  libssh,
+  openssl,
+  pkg-config,
+}:
 stdenv.mkDerivation rec {
   name = "amqp-cpp";
 
@@ -8,7 +14,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-zCwfxdoAoXeMKAQwbga97ceCpfdHYrnZtELTpJjdDE8=";
   };
 
-  nativeBuildInputs = [ cmake libssh openssl pkg-config ];
+  nativeBuildInputs = [cmake libssh openssl pkg-config];
 
   doCheck = true;
 

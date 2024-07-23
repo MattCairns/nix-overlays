@@ -1,5 +1,11 @@
-{ gcc10Stdenv, cmake, fetchFromGitHub, fetchpatch, pkg-config, gcc12 }:
-
+{
+  gcc10Stdenv,
+  cmake,
+  fetchFromGitHub,
+  fetchpatch,
+  pkg-config,
+  gcc12,
+}:
 gcc10Stdenv.mkDerivation rec {
   name = "spdlog";
   version = "1.9.2";
@@ -19,7 +25,6 @@ gcc10Stdenv.mkDerivation rec {
     })
   ];
 
-
   buildInputs = [
     pkg-config
     cmake
@@ -31,7 +36,7 @@ gcc10Stdenv.mkDerivation rec {
     "-DSPDLOG_BUILD_SHARED=ON"
   ];
 
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [cmake];
 
   postInstall = ''
     mkdir -p $out/share/doc/spdlog

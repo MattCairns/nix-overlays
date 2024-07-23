@@ -1,5 +1,13 @@
-{ stdenv, lib, fetchFromGitHub, fetchpatch, gitUpdater, gcc12, cmake, pkg-config }:
-
+{
+  stdenv,
+  lib,
+  fetchFromGitHub,
+  fetchpatch,
+  gitUpdater,
+  gcc12,
+  cmake,
+  pkg-config,
+}:
 stdenv.mkDerivation rec {
   pname = "yaml-cpp";
   version = "0.7.0";

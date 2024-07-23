@@ -1,5 +1,9 @@
-{ stdenv, cmake, pkg-config, flatbuffers-23-1-21 }:
-
+{
+  stdenv,
+  cmake,
+  pkg-config,
+  flatbuffers-23-1-21,
+}:
 stdenv.mkDerivation {
   name = "xplorer-flatbuffers";
 
@@ -9,7 +13,7 @@ stdenv.mkDerivation {
     ref = "develop";
   };
 
-  nativeBuildInputs = [ cmake pkg-config flatbuffers-23-1-21 ];
+  nativeBuildInputs = [cmake pkg-config flatbuffers-23-1-21];
 
   doCheck = true;
 

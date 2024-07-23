@@ -1,5 +1,9 @@
-{ lib, pkgs, fetchFromGitHub, rustPlatform }:
-
+{
+  lib,
+  pkgs,
+  fetchFromGitHub,
+  rustPlatform,
+}:
 rustPlatform.buildRustPackage rec {
   pname = "hide-my-mess-rs";
   version = "v0.1.1";

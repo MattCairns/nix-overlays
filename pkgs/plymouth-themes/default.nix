@@ -1,5 +1,8 @@
-{ stdenv, fetchurl, git }:
-
+{
+  stdenv,
+  fetchurl,
+  git,
+}:
 stdenv.mkDerivation rec {
   pname = "adi1090x-plymouth";
   version = "0.0.1";

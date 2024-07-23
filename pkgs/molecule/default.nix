@@ -1,7 +1,7 @@
-{ python310
-, python310Packages
+{
+  python310,
+  python310Packages,
 }:
-
 python310.pkgs.buildPythonPackage rec {
   pname = "molecule";
   version = "5.0.0";

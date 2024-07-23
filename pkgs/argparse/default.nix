@@ -1,5 +1,10 @@
-{ stdenv, fetchurl, gcc12, cmake, pkg-config }:
-
+{
+  stdenv,
+  fetchurl,
+  gcc12,
+  cmake,
+  pkg-config,
+}:
 stdenv.mkDerivation rec {
   name = "argparse";
 
@@ -15,7 +20,7 @@ stdenv.mkDerivation rec {
       --replace '$'{prefix}/@CMAKE_INSTALL_INCLUDEDIR@ @CMAKE_INSTALL_FULL_INCLUDEDIR@
   '';
 
-  nativeBuildInputs = [ gcc12 cmake pkg-config ];
+  nativeBuildInputs = [gcc12 cmake pkg-config];
 
   doCheck = true;
 
