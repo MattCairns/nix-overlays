@@ -26,7 +26,7 @@ stdenv.mkDerivation {
     hash = "sha256-g7RzatzJ+ezHaOqhVQ5jOZJ+lrZWouB6cuWwl3eXHaE=";
   };
 
-  patches = [ ./dont-download-common-lws-if-found-pkg-config.patch ];
+  patches = [ ./dont-download-common-lws-if-found-pkg-config.patch ./threadpool.patch ];
 
   
   propagatedBuildInputs = [
@@ -73,7 +73,7 @@ includedir=''${prefix}/include
 Name: libkvswebrtcsdk
 Version: 1.10.2 
 Description: amazon-kinesis-video-streams-webrtc-sdk-c packaged for OOR 
-Libs: -L''${prefix}/lib -larenac 
+Libs: -L''${prefix}/lib -lkvsWebrtcClient -lkvsWebrtcSignalingClient -lkvsCommonLws -lkvspicUtils -lwebsockets
 Cflags: -I''${prefix}/include/com/amazonaws/kinesis/video/webrtcclient
 EOF
   '';
