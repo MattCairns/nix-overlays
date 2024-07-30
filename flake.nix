@@ -43,6 +43,7 @@
         amazon-kinesis-video-streams-webrtc-sdk-c = pkgs.amazon-kinesis-video-streams-webrtc-sdk-c;
         amazon-kinesis-video-streams-producer-c = pkgs.amazon-kinesis-video-streams-producer-c;
         amazon-kinesis-video-streams-pic = pkgs.amazon-kinesis-video-streams-pic;
+        gst-to-kvs-webrtc = pkgs.gst-to-kvs-webrtc;
       }
     );
     overlays.default = final: prev: {
@@ -63,6 +64,7 @@
       amazon-kinesis-video-streams-webrtc-sdk-c = prev.callPackage ./pkgs/amazon-kinesis-video-streams-webrtc-sdk-c {};
       amazon-kinesis-video-streams-producer-c = prev.callPackage ./pkgs/amazon-kinesis-video-streams-producer-c {};
       amazon-kinesis-video-streams-pic = prev.callPackage ./pkgs/amazon-kinesis-video-streams-pic {};
+      gst-to-kvs-webrtc = prev.callPackage ./pkgs/gst-to-kvs-webrtc {};
     };
   };
 }
